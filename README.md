@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1031832467.svg)](https://doi.org/10.5281/zenodo.16737895)
+
 # Grundtner et al. 2025
 
 This repository contains code to run the MEFISTO analysis of the data presented in Grundtner et al. 2025
