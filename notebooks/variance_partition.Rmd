@@ -1,0 +1,56 @@
+```{r, setup}
+library(variancePartition)
+library(dplyr)
+```
+```{r}
+# must not contain NaNs
+data <- read.csv(
+  '../data/new_data_full.csv',
+  header = TRUE,
+  row.names = 1
+) %>% t() %>% log1p()
+```
+```{r}
+metadata <- read.csv(
+  '../data/new_metadata.csv',
+  header = TRUE,
+  row.names = 1
+)
+metadata
+```
+```{r}
+form <- ~ (1 | Age) +  (1 | Experimenter.Isolation) + (1 | Isolation.Day) + (1 | WCL.Day) + (1 | SP3.Day.1) + (1 | Condition) + (1 | Sex) + (1 | POD) + (1 | Experimenter.Surgery)
+varPart <- fitExtractVarPartModel(
+  data, 
+  form, 
+  metadata
+)
+```
+```{r}
+plotVarPart(varPart)
+```
+```{r}
+write.csv(varPart, '../data/new_var_part_full.csv', quote = FALSE)
+```
+```{r}
+# must not contain NaNs
+data <- read.csv(
+  '../data/new_data_anova.csv',
+  header = TRUE,
+  row.names = 1
+) %>% t() %>% log1p()
+```
+```{r}
+form <- ~ (1 | Age) + (1 | Experimenter.Isolation) + (1 | Isolation.Day) + (1 | WCL.Day) + (1 | SP3.Day.1) + (1 | Condition) + (1 | Sex) + (1 | POD) + (1 | Experimenter.Surgery)
+varPart <- fitExtractVarPartModel(
+  data, 
+  form, 
+  metadata
+)
+```
+```{r}
+plotVarPart(varPart)
+```
+```{r}
+write.csv(varPart, '../data/new_var_part_anova.csv', quote = FALSE)
+```

@@ -1,0 +1,15 @@
+name: mefisto
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - cudatoolkit=10.2.89
+  - python=3.10.4
+  - pip
+  - pip:
+    - cupy==11.3.0
+    - jupyterlab==3.4.4
+    - mofapy2==0.6.7
+    - mofax==0.3.6
+    - muon==0.1.2
+    - openpyxl==3.0.10
