@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/1031832467.svg)](https://doi.org/10.5281/zenodo.16737895)
+[[![DOI](https://zenodo.org/badge/1031832467.svg)](https://doi.org/10.5281/zenodo.16737895)](https://doi.org/10.5281/zenodo.16737895)
 
 # Grundtner et al. 2025
 
